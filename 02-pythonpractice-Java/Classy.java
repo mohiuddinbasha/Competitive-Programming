@@ -16,8 +16,31 @@
 // Use the test cases below to guide you!
 
 import java.util.ArrayList;
-import java.util.List;
+// import java.util.List;
 
 public class Classy {
+    ArrayList<String> arr = new ArrayList<>();
 
+    public void addItem(String str) {
+        arr.add(str);
+    }
+
+    public int classiness() {
+        int count = 0;
+        for (int i = 0; i < arr.size(); i++) {
+            String value = arr.get(i);
+            if (value.equals("tophat")) {
+                count += 2;
+            } else if (value.equals("bowtie")) {
+                count += 4;
+            } else if (value.equals("monocle")) {
+                count += 5;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        
+    }
 }
