@@ -6,6 +6,14 @@
 
 
 def fun_nearestodd(n):
-	return 0
+	real = int(n)
+	decimal = n - real
+	if real % 2 != 0:
+		return real
+	else:
+		if (real+1)-n < n-(real-1):
+			return real+1
+		else:
+			return real-1
 
 
