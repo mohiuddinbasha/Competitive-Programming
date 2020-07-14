@@ -1,3 +1,7 @@
+#Roll 3 dice.
+# If you do not have 3 matching dice:
+# If you have 2 matching dice (a pair), keep the pair and roll one die to replace the third die.
+# Otherwise, if you have no matching dice, keep the highest die and roll two dice to replace the other two dice.
 # This is the most complicated part. Write the function playstep2(hand, dice) that plays step 2 as
 # explained above. This function takes a hand, which is a 3-digit integer, and it also takes dice,
 # which is an integer containing all the future rolls of the dice. For example, if dice is 5341,
@@ -28,6 +32,30 @@
 # into a sorted hand.
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
 
+def handToDice(hand):
+	string = str(hand)
+	return int(string[0]),int(string[1]),int(string[2])
+
+def diceToOrderedHand(a, b, c):
+	maximum = max(a, b, c)
+	minimum = min(a, b, c)
+	middle = (a+b+c) - (maximum + minimum)
+	return (maximum*100)+(middle*10)+minimum
+
 def playstep2(hand, dice):
-	# your code goes here
-	pass
+	(a, b, c) = handToDice(hand)
+	if a != b and b!= c and a != c:
+		a = max(a, b, c)
+		b = dice % 10
+		dice = dice // 10
+		c = dice % 10
+		dice = dice // 10
+	else:
+		if b == c:
+			a = b
+		elif a == c:
+			b = a
+		c = dice % 10
+		dice = dice // 10
+	hand = diceToOrderedHand(a, b, c)
+	return hand, dice
