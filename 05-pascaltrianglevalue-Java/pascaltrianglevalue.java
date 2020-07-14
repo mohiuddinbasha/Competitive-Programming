@@ -13,7 +13,7 @@ class pascaltrianglevalue {
 	public int fun_pascaltrianglevalue(int row, int col){
 		if (check(row, col)) {
 			int[] arr = {1};
-			int size = 0;
+			int size = 1;
 			while (size <= row) {
 				if (arr.length == 1) {
 					arr = new int[2];
@@ -27,7 +27,10 @@ class pascaltrianglevalue {
 						temp++;
 					}
 					array[temp] = 1;
-					arr = array;
+					arr = new int[array.length];
+					for (int i = 0; i < arr.length; i++) {
+						arr[i] = array[i];
+					}
 				}
 				size++;
 			}
@@ -38,6 +41,6 @@ class pascaltrianglevalue {
 	}
 	public static void main(String[] args) {
 		pascaltrianglevalue s = new pascaltrianglevalue();
-		System.out.println(s.fun_pascaltrianglevalue(1, 1));
+		System.out.println(s.fun_pascaltrianglevalue(5, 2));
 	}
 }
