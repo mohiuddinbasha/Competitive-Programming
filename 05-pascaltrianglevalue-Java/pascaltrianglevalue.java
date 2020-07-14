@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 // # Write the function pascalsTriangleValue(row, col) 
 // # that takes int values row and col, and returns the 
 // # value in the given row and column of Pascal's 
@@ -32,15 +34,16 @@ class pascaltrianglevalue {
 						arr[i] = array[i];
 					}
 				}
+				// System.out.println(Arrays.toString(arr));
 				size++;
 			}
-			return arr[row];
+			return arr[col];
 		} else {
 			return 0;
 		}
 	}
 	public static void main(String[] args) {
 		pascaltrianglevalue s = new pascaltrianglevalue();
-		System.out.println(s.fun_pascaltrianglevalue(5, 2));
+		System.out.println(s.fun_pascaltrianglevalue(7, 4));
 	}
 }
