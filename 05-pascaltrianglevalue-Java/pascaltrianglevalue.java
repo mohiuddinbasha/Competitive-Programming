@@ -6,8 +6,38 @@
 // # are not legal values, return None, instead of crashing. 
 
 class pascaltrianglevalue {
+	public boolean check(int row, int col) {
+		return row >= 0 && col <= row;
+	}
+
 	public int fun_pascaltrianglevalue(int row, int col){
-		// your code goes here
-		return 1;	
+		if (check(row, col)) {
+			int[] arr = {1};
+			int size = 0;
+			while (size <= row) {
+				if (arr.length == 1) {
+					arr = new int[2];
+					arr[0] = arr[1] = 1;
+				} else {
+					int[] array = new int[size+1];
+					array[0] = 1;
+					int temp = 1;
+					for (int i = 0; i < arr.length - 1; i++) {
+						array[temp] = arr[i]+arr[i+1];
+						temp++;
+					}
+					array[temp] = 1;
+					arr = array;
+				}
+				size++;
+			}
+			return arr[row];
+		} else {
+			return 0;
+		}
+	}
+	public static void main(String[] args) {
+		pascaltrianglevalue s = new pascaltrianglevalue();
+		System.out.println(s.fun_pascaltrianglevalue(1, 1));
 	}
 }
