@@ -40,7 +40,7 @@
 
 def handToDice(hand):
 	string = str(hand)
-	return int(string[0]),int(string[1]),int(string[2])
+	return int(string[0]), int(string[1]), int(string[2])
 
 def diceToOrderedHand(a,b,c):
 	maxi = max(a,b,c)
@@ -50,7 +50,9 @@ def diceToOrderedHand(a,b,c):
 
 def playstep2(hand,dice):
 	(a,b,c) = handToDice(hand)
-	if a!=b and b!=c and a!=c:
+	if a == b and b == c and a == c:
+		return hand, dice
+	elif a!=b and b!=c and a!=c:
 		a = max(a,b,c)
 		b = dice % 10
 		dice = dice//10
@@ -83,7 +85,7 @@ def bonusplaythreediceyahtzee(dice):
 	# Your code goes here
 	dice = str(dice)
 	d = int(dice[:4])
-	h = int(dice[4])
+	h = int(dice[4:])
 	h,d = playstep2(h,d)
 	h,d = playstep2(h,d)
 	return h, score(h)
