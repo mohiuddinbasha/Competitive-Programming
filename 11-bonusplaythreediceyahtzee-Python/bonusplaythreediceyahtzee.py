@@ -38,7 +38,52 @@
 # assert(bonusPlayThreeDiceYahtzee(2333413) == (333, 29))
 # assert(bonusPlayThreeDiceYahtzee(2333555) == (555, 35))
 
+def handToDice(hand):
+	string = str(hand)
+	return int(string[0]),int(string[1]),int(string[2])
+
+def diceToOrderedHand(a,b,c):
+	maxi = max(a,b,c)
+	mini = min(a,b,c)
+	middle = (a+b+c)-(maxi + mini)
+	return (maxi*100)+(middle*10)+mini
+
+def playstep2(hand,dice):
+	(a,b,c) = handToDice(hand)
+	if a!=b and b!=c and a!=c:
+		a = max(a,b,c)
+		b = dice % 10
+		dice = dice//10
+		c = dice % 10
+		dice = dice//10
+	else:
+		if b==c:
+			a=b
+		elif a==c:
+			b=a
+		c = dice%10
+		dice = dice // 10
+	hand = diceToOrderedHand(a,b,c)
+	return hand, dice
+
+def score(hand):
+	(a,b,c) = handToDice(hand)
+	if a!=b and b!=c and a!=c:
+		return max(a,b,c)
+	elif a == b and b == c and a == c:
+		return 20+a+b+c
+	elif a == b:
+		return 10+a+b
+	elif b == c:
+		return 10+b+c
+	elif c == a:
+		return 10+a+c
 
 def bonusplaythreediceyahtzee(dice):
 	# Your code goes here
-	pass
+	dice = str(dice)
+	d = int(dice[:4])
+	h = int(dice[4])
+	h,d = playstep2(h,d)
+	h,d = playstep2(h,d)
+	return h, score(h)
