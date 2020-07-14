@@ -15,6 +15,7 @@ def fun_set_kth_digit(n, k, d):
 		n = str(n)
 	n = n[:]
 	n = n[:k]+str(d)+n[k+1:]
+	n = n[:]
 	value = int(n)
 	if flag:
 		return -1*value
