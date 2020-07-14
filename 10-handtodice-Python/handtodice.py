@@ -7,4 +7,4 @@
 
 def handtodice(hand):
 	string = str(hand)
-	return str[0],str[1],str[2]
+	return int(string[0]),int(string[1]),int(string[2])
