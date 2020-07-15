@@ -8,6 +8,11 @@
 # head down (so we say that "up is down")
 
 def fun_rectangle_overlap(left1, top1, width1, height1, left2, top2, width2, height2):
-    return True
+    (x1,y1) = left1,top1
+    (x2,y2) = left1+width1,top1
+    (x3,y3) = left1,top1+height1
+    (x4,y4) = left1+width1,top1+height1
+
+    return (x1 >= left2 and x1 <= left2+width2 and y1 >= top2 and y1 <= top2+height2) or (x2 >= left2 and x2 <= left2+width2 and y2 >= top2 and y2 <= top2+height2) or (x3 >= left2 and x3 <= left2+width2 and y3 >= top2 and y3 <= top2+height2) or (x4 >= left2 and x4 <= left2+width2 and y4 >= top2 and y4 <= top2+height2)
 
         
