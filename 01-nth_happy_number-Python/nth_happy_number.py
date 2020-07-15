@@ -10,6 +10,24 @@
 # assert(nthHappyNumber(6) == 28)
 # assert(nthHappyNumber(7) == 31)
 
+def is_HappyNumber(n):
+	if n == 0 or n == 4:
+		return False
+	elif n == 1:
+		return True
+	else:
+		v = 0
+		while n > 0:
+			v += (n % 10)**2
+			n = n // 10
+		return is_HappyNumber(v)
 
 def fun_nth_happy_number(n):
-	return 0
+	temp = 1
+	while n <= 0:
+		print("temp: "+temp)
+		if is_HappyNumber(temp):
+			n -= 1
+		temp += 1
+	return temp-1
+print(fun_nth_happy_number(1))
