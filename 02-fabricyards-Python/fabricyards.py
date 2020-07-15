@@ -10,14 +10,15 @@
 # inches of fabric desired and returns the number of inches of excess 
 # fabric that must be purchased (as purchases must be in whole yards)
 # . Hint: you may want to use fabricYards, which you just wrote!
-
+# 1 yard = 36 inches
+import math
 
 def fun_fabricyards(inches):
-	# your code goes here
-	return 1
+	val = inches/36
+	return math.ceil(val)
 
 def fun_fabricexcess(inches):
-	# your code goes here
-	return 1
+	val = fun_fabricyards(inches)
+	return (val*36)-inches
 
 
