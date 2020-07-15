@@ -1,5 +1,6 @@
 # gcd(m, n) [10pts]  
-# [Note: to receive any credit, you must solve this problem using Euclid's algorithm, and by no other means. In particular, do not just loop through all integers less than min(m,n) and find the common factors that way -- it is much too slow!]
+# [Note: to receive any credit, you must solve this problem using Euclid's algorithm, and by no other means. 
+# In particular, do not just loop through all integers less than min(m,n) and find the common factors that way -- it is much too slow!]
 # According to Euclid, the greatest common divisor, or gcd, can be found like so: 
 #        gcd(x,y) == gcd(y, x%y) 
 # We can use that to quickly find gcd's. For example: 
@@ -10,4 +11,7 @@
 
 def gcd(m, n):
 	# your code goes here
-	pass
+	if m == 0:
+		return n
+	else:
+		gcd(m%n, n)
