@@ -29,4 +29,4 @@ def fun_nth_happy_prime(n):
 		temp += 1
 	return temp-1
 
-print(isPrime(4))
+print(isPrime(5))
