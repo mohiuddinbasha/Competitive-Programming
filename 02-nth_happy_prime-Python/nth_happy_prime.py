@@ -24,9 +24,7 @@ def isHappyNumber(n):
 def fun_nth_happy_prime(n):
 	temp = 1
 	while n >= 0:
-		if isHappyNumber(n) and isPrime(n):
+		if isHappyNumber(temp) and isPrime(temp):
 			n -= 1
 		temp += 1
 	return temp-1
-
-print(isPrime(7))
