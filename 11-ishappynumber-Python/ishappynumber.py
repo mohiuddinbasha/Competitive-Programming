@@ -16,7 +16,7 @@
 
 def ishappynumber(n):
 	# your code goes here
-	if n < 0 or n == 4:
+	if n <= 0 or n == 4:
 		return False
 	elif n == 1:
 		return True
