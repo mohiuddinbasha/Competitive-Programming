@@ -24,10 +24,8 @@ def is_HappyNumber(n):
 
 def fun_nth_happy_number(n):
 	temp = 1
-	while n <= 0:
-		print("temp: "+temp)
+	while n >= 0:
 		if is_HappyNumber(temp):
 			n -= 1
 		temp += 1
 	return temp-1
-print(fun_nth_happy_number(1))
