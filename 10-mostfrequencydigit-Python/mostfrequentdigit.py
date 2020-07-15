@@ -4,4 +4,16 @@
 
 def mostfrequentdigit(n):
 	# your code goes here
-	pass
+	d = {}
+	while n > 0:
+		val = n % 10
+		if val in d:
+			d[val] += 1
+		else:
+			d[val] = 1
+		n = n // 10
+	(num,c) = (0,0)
+	for x in d.keys():
+		if d[x] > c or (d[x] == c and x < num):
+			(num,c) = (x,d[x])
+	return num
