@@ -6,7 +6,7 @@ class QuickSort {
 		int pivot = arr[low];
 		int i = low+1;
 		int j = high;
-		while (i < j) {
+		while (true) {
 			System.out.println("i = "+i);
 			System.out.println("j = "+j);
 			while (arr[i] < pivot) {
