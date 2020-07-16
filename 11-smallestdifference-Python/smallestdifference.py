@@ -6,11 +6,13 @@
 
 def smallestdifference(a):
 	# Your code goes here
-	if len(a) == 0:
+	if a == None or len(a) == 0:
 		return -1
-	a = a.sort()
+	a.sort()
 	diff = 10000000000000
 	for i in range(len(a)-1):
 		if abs(a[i]-a[i+1]) < diff:
 			diff = abs(a[i]-a[i+1])
 	return diff
+
+print(smallestdifference([1,1]))
