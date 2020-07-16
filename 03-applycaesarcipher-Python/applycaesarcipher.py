@@ -11,15 +11,13 @@
 
 
 def fun_applycaesarcipher(msg, shift):
-	upperAlpha = "ABCDEFGHIJKLMNOPQRSTUWXYZ"
+	upperAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	lowerAlpha = upperAlpha.lower()
 	output = ""
 	for x in msg:
 		if x in upperAlpha:
 			p = upperAlpha.find(x)
-			print(p)
 			p += shift
-			print(p)
 			if p > 25:
 				p -= 25
 				output += upperAlpha[p]
@@ -36,7 +34,6 @@ def fun_applycaesarcipher(msg, shift):
 		else:
 			output += x
 	return output
-print(fun_applycaesarcipher('T',-3))
 
 
 
