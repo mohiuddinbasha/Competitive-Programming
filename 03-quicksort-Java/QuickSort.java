@@ -48,7 +48,7 @@ class QuickSort {
 		int low = 0;
 		int high = arr.length - 1;
 		sort(arr, low, high);
-		return new int[5];
+		return arr;
 	}
 	public static void main(String[] args) {
 		QuickSort obj = new QuickSort();
