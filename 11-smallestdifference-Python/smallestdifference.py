@@ -14,5 +14,3 @@ def smallestdifference(a):
 		if abs(a[i]-a[i+1]) < diff:
 			diff = abs(a[i]-a[i+1])
 	return diff
-
-print(smallestdifference([1,1]))
