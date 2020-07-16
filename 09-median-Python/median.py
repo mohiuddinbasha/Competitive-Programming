@@ -7,6 +7,6 @@ def median(a):
 	if len(a) == 0:
 		return None
 	if len(a) % 2 == 0:
-		return (a[len(a)//2]+a[(len(a)//2)+1])/2
+		return (a[(len(a)//2)-1]+a[len(a)//2])/2
 	else:
-		return a[len(a)//2]/2
+		return a[len(a)//2]
