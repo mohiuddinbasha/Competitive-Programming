@@ -1,3 +1,4 @@
+import java.util.prefs.NodeChangeListener;
 
 class Node {
 	public int value;
@@ -13,17 +14,28 @@ public class BinaryTree {
 	public Node root;
 	
 	public BinaryTree(int value) {
-        // Your code goes here
+        root = new Node(value);
 	}
 
 	public boolean search(int value) {
 		// Your code goes here
-		return true;
+		return search_Node(root, value);
 	}
 
 	private boolean search_Node(Node node, int value) {
 		// Your code goes here
-		return false;
-
+		if (node == null) {
+			return false;
+		} else if (node.value == value) {
+			return true;
+		} else {
+			boolean left = search_Node(node.left, value);
+			boolean right = search_Node(node.right, value);
+			if (left || right) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	}
 }
