@@ -4,7 +4,7 @@ class QuickSort {
 
 	public int partition(int[] arr, int low, int high) {
 		int pivot = arr[low];
-		int i = low++;
+		int i = low+1;
 		int j = high;
 		while (i < j) {
 			System.out.println("i = "+i);
