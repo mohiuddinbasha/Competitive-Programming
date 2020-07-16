@@ -11,7 +11,29 @@
 
 
 def fun_applycaesarcipher(msg, shift):
-	return ""
+	upperAlpha = "ABCDEFGHIJKLMNOPQRSTUWXYZ"
+	lowerAlpha = upperAlpha.lower()
+	output = ""
+	for x in msg:
+		if x in upperAlpha:
+			p = upperAlpha.find(x)
+			p += shift
+			if p > 26:
+				p -= 26
+				output += upperAlpha[p]
+			else:
+				output += upperAlpha[p]
+		elif x in lowerAlpha:
+			p = lowerAlpha.find(x)
+			p += shift
+			if p > 26:
+				p -= 26
+				output += lowerAlpha[p]
+			else:
+				output += lowerAlpha[p]
+		else:
+			output += x
+	return output
 
 
 
