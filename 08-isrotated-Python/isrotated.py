@@ -5,4 +5,8 @@
 
 
 def isrotated(str1, str2):
-	return str1 == str2[::-1]
+	if str1 == str2[::-1]:
+		return True
+	position = str1.find(str2[0])
+	str1 = str1[position:]+str1[:position]
+	return str1 == str2
