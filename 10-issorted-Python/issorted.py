@@ -7,4 +7,8 @@
 
 def issorted(a):
 	# your code goes here
-	pass
+	boolean = False
+	if ((all(a[x] <= a[x+1] for x in range(len(a)-1))) or (all(a[x] >= a[x+1] for x in range(len(a)-1)))):
+		boolean = True
+	return boolean
+		
