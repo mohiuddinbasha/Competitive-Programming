@@ -34,21 +34,21 @@ class QuickSort {
 		return j;
 	}
 
-	public int[] sort(int[] arr, int low, int high) {
-		System.out.println(Arrays.toString(arr));
+	public void sort(int[] arr, int low, int high) {
 		if (high > low) {
 			int index = partition(arr, low, high);
 			sort(arr, low, index-1);
 			sort(arr, index+1, high);
 		}
-		return arr;
+		System.out.println(Arrays.toString(arr));
 	}
 
 	public int[] quicksort(int[] arr){
 		// Your code goes here
 		int low = 0;
 		int high = arr.length - 1;
-		return sort(arr, low, high);
+		sort(arr, low, high);
+		return new int[5];
 	}
 	public static void main(String[] args) {
 		QuickSort obj = new QuickSort();
