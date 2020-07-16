@@ -18,16 +18,16 @@ def fun_applycaesarcipher(msg, shift):
 		if x in upperAlpha:
 			p = upperAlpha.find(x)
 			p += shift
-			if p > 25:
-				p -= 25
+			if p >= 26:
+				p -= 26
 				output += upperAlpha[p]
 			else:
 				output += upperAlpha[p]
 		elif x in lowerAlpha:
 			p = lowerAlpha.find(x)
 			p += shift
-			if p > 25:
-				p -= 25
+			if p >= 26:
+				p -= 26
 				output += lowerAlpha[p]
 			else:
 				output += lowerAlpha[p]
