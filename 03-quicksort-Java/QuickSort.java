@@ -7,6 +7,8 @@ class QuickSort {
 		int i = low++;
 		int j = high;
 		while (i < j) {
+			System.out.println("i = "+i);
+			System.out.println("j = "+j);
 			while (arr[i] < pivot) {
 				i++;
 				if (i == high) {
@@ -33,6 +35,7 @@ class QuickSort {
 	}
 
 	public int[] sort(int[] arr, int low, int high) {
+		System.out.println(Arrays.toString(arr));
 		if (high > low) {
 			int index = partition(arr, low, high);
 			sort(arr, low, index-1);
