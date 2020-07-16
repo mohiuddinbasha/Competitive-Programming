@@ -17,21 +17,49 @@ public class BST {
     }
 
     public void insert(int value) {
-    	// Your code goes here
+
+    	insert(root, value);
     }
 
     private void insert(Node node, int value) {
-    	// Your code goes here
+        if (value < node.value) {
+            if (node.left == null) {
+                node.left = new Node(value);
+                return;
+            } else {
+                insert(node.left, value);
+            }
+        } else {
+            if (node.right == null) {
+                node.right = new Node(value);
+                return;
+            } else {
+                insert(node.right, value);
+            }
+        }
     }
 
     public boolean search(int value) {
-    	// Your code goes here
-    	return false;
+        // Your code goes here
+        if (root.value == value) {
+            return true;
+        }
+        return search(root, value);
     }
 
     private boolean search(Node current, int value) {
     	// Your code goes here
-    	return false;
+    	if (current == null) {
+            return false;
+        } else if (current.value == value) {
+            return true;
+        } else {
+            if (value < current.value) {
+                return search(current.left, value);
+            } else {
+                return search(current.right, value);
+            }
+        }
     }
 
 }
