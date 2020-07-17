@@ -27,3 +27,4 @@ def fun_nth_additive_prime(n):
 			break
 		index += 1
 	return index
+print(fun_nth_additive_prime(0))
