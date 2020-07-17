@@ -22,3 +22,4 @@ def findzerowithbisection(x, epsilon):
 		else:
 			low = mid
 print(findzerowithbisection(25,0.01))
+print(findzerowithbisection(25,0.01)<0.01)
