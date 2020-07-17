@@ -14,9 +14,11 @@ def findzerowithbisection(x, epsilon):
 	while True:
 		mid = (low+high)/2
 		sqr = mid**2
-		if abs(sqr-x) <= epsilon:
+		if abs(x-sqr) <= epsilon:
+			print(abs(x-sqr))
 			return mid
 		if sqr > x:
 			high = mid
 		else:
 			low = mid
+print(findzerowithbisection(25,0.01))
