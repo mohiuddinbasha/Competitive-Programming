@@ -15,12 +15,12 @@ def lookandsay(a):
 	for x in a:
 		if num != x:
 			if count != 0:
-				l.append(count,num)
+				l.append((count,num))
 			num = x
 			count = 1
 		else:
 			count += 1
 	if (count,num) not in l and count != 0:
-		l.append(count,num)
+		l.append((count,num))
 	return l
 		
