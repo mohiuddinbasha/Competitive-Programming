@@ -21,7 +21,7 @@ def isfactor(m,n):
 def fun_isfactorish(n):
 	n = abs(n)
 	s = str(n)
-	if len(s) != 3:
+	if len(s) != 3 or s[0] == s[1] or s[1] == s[2] or s[0] == s[2]:
 		return False
 	return isfactor(int(s[0]),n) and isfactor(int(s[1]),n) and isfactor(int(s[2]),n)
 
