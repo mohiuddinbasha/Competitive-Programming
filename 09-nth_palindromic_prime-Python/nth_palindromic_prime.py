@@ -18,12 +18,9 @@ def fun_nth_palindromic_prime(n):
 	index = 1
 	count = -1
 	while True:
-		print(index)
-		if isPalindrome(n) and isPrime(n):
+		if isPalindrome(index) and isPrime(index):
 			count += 1
 		if count == n:
 			break
 		index += 1
 	return index
-# print(fun_nth_palindromic_prime(0))
-print(isPalindrome(10))
