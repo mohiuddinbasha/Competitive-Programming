@@ -5,6 +5,15 @@
 
 
 def fun_kth_occurrences(s, n):
-	return 'a'
+	d = {}
+	for x in s:
+		if x not in d:
+			d[x] = 1
+		else:
+			d[x] += 1
+	l = sorted(d.items(), key = lambda x: (x[1],x[0]))
+	print(l)
+
+fun_kth_occurrences("hello world",1)
 
 
