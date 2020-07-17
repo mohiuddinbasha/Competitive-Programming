@@ -13,6 +13,14 @@ def isrotation(x, y):
 		return False
 	if x == y or y == x[::-1]:
 		return True
-	p = x.find(y[0])
-	x = x[p:]+x[:p]
-	return x == y
+	for i in range(len(x)):
+		p = x.find(y[:i])
+		t = x[p:]+x[:p]
+		if t == y:
+			return True
+	for i in range(len(x)):
+		p = y.find(x[:i])
+		t = y[p:]+y[:p]
+		if t == x:
+			return True
+	return False
