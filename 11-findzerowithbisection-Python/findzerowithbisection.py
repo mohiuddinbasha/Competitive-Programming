@@ -12,11 +12,11 @@ def findzerowithbisection(x, epsilon):
 	low = 1
 	high = x
 	while True:
-		mid = (low+high)/2
+		mid = (low+high)//2
 		sqr = mid**2
 		if high-low <= epsilon:
 			return mid
 		if sqr > x:
-			high = mid//2
+			high = mid
 		else:
-			low = mid//2
+			low = mid
