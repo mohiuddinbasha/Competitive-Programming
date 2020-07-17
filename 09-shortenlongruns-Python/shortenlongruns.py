@@ -20,9 +20,11 @@ def shortenlongruns(L, k):
 			l.append(x)
 			count += 1
 		elif num == x:
-			if count != k:
-				count += 1
+			count += 1
+			if count < k:
+				l.append(x)
 		else:
 			l.append(x)
+			num = x
 			count = 1
 	return l
