@@ -28,8 +28,15 @@ def multipolynomials(p1, p2):
 		r = p2[1]
 	else:
 		r = p2[0]
-	l = [a*p,(a*q+b*p),(a*r+b*q+c*p),(b*r+c*q),c*r]
-	while 0 in l:
-		l.remove(0)
+	if len(p1) == len(p2) == 3:
+		l = [a*p,(a*q+b*p),(a*r+b*q+c*p),(b*r+c*q),c*r]
+	elif ((len(p1) == 3 and len(p2) == 2) or (len(p2) == 3 and len(p1) == 2)):
+		l = [(a*q+b*p),(a*r+b*q+c*p),(b*r+c*q),c*r]
+	elif len(p1) == len(p2) == 2:
+		l = [(a*r+b*q+c*p),(b*r+c*q),c*r]
+	elif ((len(p1) == 2 and len(p2) == 1) or (len(p2) == 2 and len(p1) == 3)):
+		l = [(b*r+c*q),c*r]
+	elif len(p1) == len(p2) == 1:
+		l = [c*r]
 	return l
 	
