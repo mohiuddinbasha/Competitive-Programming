@@ -15,9 +15,9 @@
 
 def ismostlymagicsquare(a):
 	# Your code goes here
-	count = sum[a[0]]
+	count = sum(a[0])
 	for x in range(len(a)-1):
-		if sum[x] != sum[x+1]:
+		if sum(a[x]) != sum(a[x+1]):
 			return False
 	for x in range(len(a)):
 		temp = 0
