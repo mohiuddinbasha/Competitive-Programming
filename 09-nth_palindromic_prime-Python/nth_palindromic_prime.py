@@ -26,4 +26,4 @@ def fun_nth_palindromic_prime(n):
 		index += 1
 	return index
 # print(fun_nth_palindromic_prime(0))
-print(isPalindrome(2))
+print(isPalindrome(10))
