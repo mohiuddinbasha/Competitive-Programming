@@ -7,4 +7,29 @@
 
 def multipolynomials(p1, p2):
 	# Your code goes here
-	pass
+	#(ax**2+bx+c)(px**2+qx+r) = apX**4+(aq+bp)X**3+(ar+bq+cp)X**2+(br+cq)X+cr/////
+	a = b = c = 0
+	p = q = r = 0
+	if len(p1) == 3:
+		a = p1[0]
+		b = p1[1]
+		c = p1[2]
+	elif len(p1) == 2:
+		b = p1[0]
+		c = p1[1]
+	else:
+		c = p1[0]
+	if len(p2) == 3:
+		p = p2[0]
+		q = p2[1]
+		r = p2[2]
+	elif len(p2) == 2:
+		q = p2[0]
+		r = p2[1]
+	else:
+		r = p2[0]
+	l = [a*p,(a*q+b*p),(a*r+b*q+c*p),(b*r+c*q),c*r]
+	while 0 in l:
+		l.remove(0)
+	return l
+	
