@@ -4,7 +4,23 @@
 # so 313 is an palindrome Prime. fun_nth_palindrome_prime(0) returns 2
 
 
+def isPrime(n):
+	count = 0
+	for i in range(1, n+1):
+		if n % i == 0:
+			count += 1
+	return count == 2
 
+def isPalindrome(n):
+	return str(n) == str(n)[::-1]
 
 def fun_nth_palindromic_prime(n):
-	return 0
+	index = 1
+	count = -1
+	while True:
+		if isPalindrome(n) and isPrime(n):
+			count += 1
+		if count == n:
+			break
+		index += 1
+	return index
