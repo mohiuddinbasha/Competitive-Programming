@@ -17,6 +17,6 @@ def findzerowithbisection(x, epsilon):
 		if high-low <= epsilon:
 			return mid
 		if sqr > x:
-			high = mid
+			high = mid//2
 		else:
-			low = mid
+			low = mid//2
