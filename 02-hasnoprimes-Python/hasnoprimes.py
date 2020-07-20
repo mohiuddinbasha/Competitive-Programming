@@ -3,7 +3,7 @@
 
 def isPrime(num):
 	count = 0
-	for i in range(1,num):
+	for i in range(1,num+1):
 		if num % i == 0:
 			count += 1
 	return count == 2
@@ -15,5 +15,4 @@ def fun_hasnoprimes(l):
 			if isPrime(x):
 				return False
 	return True
-print(fun_hasnoprimes([[12,4,6],[8,12,14],[6,18]]))
 
