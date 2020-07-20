@@ -5,4 +5,8 @@
 
 def hasduplicates(L):
 	# Your code goes here
-	pass
+	for i in L:
+		for x in i:
+			if x in L:
+				return True
+	return False
