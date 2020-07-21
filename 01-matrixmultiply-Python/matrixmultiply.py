@@ -8,28 +8,16 @@ def fun_matrixmultiply(m1, m2):
     for x in m1:
         if len(x) != len(m2):
             return None
-
-    temp = [None]*len(m1)
-    l = [temp for _ in range(len(m2[0]))]
-    print(l)
-    for x in range(len(m1)):
-        for y in range(len(m2[0])):
+    l = []
+    for x in range(len(m1)): #Final rows length means length of matrix1
+        temp = []
+        for y in range(len(m2[0])): #Final columns length means length of matrix2 element
             s = 0
-            for z in range(len(m2)):
-                s += (m1[x][z] * m2[z][y])
-            print(x,y)
-            print(s)
-            print()
-            l[x][y] = s
+            for z in range(len(m2)): #Loop through matrix2
+                s += (m1[x][z] * m2[z][y]) #Remember this and try to get this by using examples on paper
+            temp.append(s)
+        l.append(temp)
     return l
-    
-
-
-
-
-print(fun_matrixmultiply([[1,2,3],[4,5,6]],[[1,4],[2,5],[3,6]]))
-
-
 
 
 
