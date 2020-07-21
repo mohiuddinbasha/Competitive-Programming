@@ -14,6 +14,7 @@ def onlyEvenDigits(l,p):
 	else:
 		v = 0
 		n = l[p]
+		print(n)
 		while (n > 0):
 			if v == 1 and n % 10 == 0:
 				v = n % 10
@@ -22,6 +23,7 @@ def onlyEvenDigits(l,p):
 				v += n % 10
 			n = n / 10
 		n = v
+		print(n)
 		v = 0
 		while n > 0:
 			if v == 1:
