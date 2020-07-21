@@ -17,7 +17,9 @@ def fun_matrixmultiply(m1, m2):
             s = 0
             for z in range(len(m2)):
                 s += (m1[x][z] * m2[z][y])
+            print(x,y)
             print(s)
+            print()
             l[x][y] = s
     return l
     
