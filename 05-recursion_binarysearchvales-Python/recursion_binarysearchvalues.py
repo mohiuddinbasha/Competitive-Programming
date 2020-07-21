@@ -18,6 +18,8 @@
 # Hint: Do not slice the list L, but rather adjust the indexes into L. 
 
 def recursion(L,v,l,low,high):
+	print("Low : ",low)
+	print("High: ",high)
 	mid = low + (high - low)//2
 	if L[mid] == v:
 		return l
@@ -36,4 +38,5 @@ def recursion_binarysearchvalues(L, v):
 	# Your codes goes here
 	l = []
 	return recursion(L,v,l,0,len(v)-1)
+print(recursion_binarysearchvalues(['a', 'c', 'f', 'g', 'm', 'q'],'c'))
 	
