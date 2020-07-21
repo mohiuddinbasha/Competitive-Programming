@@ -132,7 +132,7 @@ public class Graph_Traversal{
 				}
 			}
 			for (int i = 0; i < array.size(); i++) {
-				dfs_helper(array.get(i).node_to, arr);
+				bfs_helper(array.get(i).node_to, arr);
 			}
 		}
 		return arr;
@@ -182,7 +182,7 @@ public class Graph_Traversal{
 		graph.insert_edge(9471, 2, 5);   // London <-> Sao Paolo
 		graph.insert_edge(9471, 5, 2);   // Sao Paolo <-> London
 		
-		ArrayList<String> r = graph.bfs_names(2);
+		ArrayList<String> r = graph.dfs_names(2);
 		System.out.println(r);
 	}
 }
