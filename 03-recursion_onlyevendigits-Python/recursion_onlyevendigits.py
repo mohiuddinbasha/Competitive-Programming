@@ -14,17 +14,15 @@ def onlyEvenDigits(l,p):
 	else:
 		v = 0
 		n = l[p]
-		print(n)
 		while (n > 0):
-			print(v)
-			if v == 0 and n % 10 == 0:
-				v = n % 10
-			elif n % 10 == 0:
+			digit = n % 10
+			if v == 0 and digit % 2 == 0:
+				v = digit
+			elif digit % 2 == 0:
 				v *= 10
 				v += n % 10
-			n = n / 10
+			n = n // 10
 		n = v
-		print(n)
 		v = 0
 		while n > 0:
 			if v == 0:
@@ -32,11 +30,10 @@ def onlyEvenDigits(l,p):
 			else:
 				v *= 10
 				v += n % 10
-			n = n / 10
+			n = n // 10
 		l[p] = v
 	return onlyEvenDigits(l,p+1)
 
 def fun_recursion_onlyevendigits(l):
 		onlyEvenDigits(l,0) 
 		return l
-print(fun_recursion_onlyevendigits([23245]))
