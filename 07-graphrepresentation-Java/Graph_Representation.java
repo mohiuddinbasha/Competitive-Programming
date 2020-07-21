@@ -81,6 +81,15 @@ public class Graph_Representation{
         // "from" nodes.
         // Each section in the list will store a list of To Node
 		ArrayList<ArrayList<Integer>> r = new ArrayList<ArrayList<Integer>>();
+		int max = -1;
+		for (int i = 0; i < nodes.size(); i++) {
+			if (nodes.get(i).value > max) {
+				max = nodes.get(i).value;
+			}
+		}
+		for (int i = 0; i <= max; i++) {
+			r.add(new ArrayList<>());
+		}
 		for (int i = 0; i < nodes.size(); i++) {
 			Node from = nodes.get(i);
 			ArrayList<Integer> temp = new ArrayList<>();
@@ -90,7 +99,7 @@ public class Graph_Representation{
 					temp.add(edge.node_to.value);
 				}
 			}
-			r.add(temp);
+			r.set(from.value, temp);
 		}
 		return r;
 
@@ -104,14 +113,35 @@ public class Graph_Representation{
         // and a 0 if no edge exists."""
 		
 		ArrayList<ArrayList<Integer>> r = new ArrayList<ArrayList<Integer>>();
+		int max = -1;
+		for (int i = 0; i < nodes.size(); i++) {
+			if (nodes.get(i).value > max) {
+				max = nodes.get(i).value;
+			}
+		}
+		for (int i = 0; i <= max; i++) {
+			ArrayList<Integer> temp = new ArrayList<>();
+			for (int j = 0; j <= max; j++) {
+				temp.add(0);
+			}
+			r.add(temp);
+		}
 		for (int i = 0; i < edges.size(); i++) {
 			Edge edge = edges.get(i);
-			ArrayList<Integer> temp = new ArrayList<>();
+			ArrayList<Integer> temp = r.get(edge.node_from.value);
 			temp.set(edge.node_to.value, edge.value);
 			r.set(edge.node_from.value, temp);
 		}
 		return r;
+	}
 
-
+	public static void main(String[] args) {
+		Graph_Representation graph = new Graph_Representation();
+		graph.insert_edge(100, 1, 2);
+		graph.insert_edge(101, 1, 3);
+		graph.insert_edge(102, 1, 4);
+		graph.insert_edge(103, 3, 4);
+		ArrayList<ArrayList<Integer>> r= graph.get_adjacency_matrix();
+		System.out.println(r);
 	}
 }
