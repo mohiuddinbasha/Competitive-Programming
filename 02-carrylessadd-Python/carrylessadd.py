@@ -6,5 +6,32 @@
 
 
 def fun_carrylessadd(x, y):
-	return 0
+	s = 0
+	while x > 0 and y > 0:
+		first = x % 10
+		second = y % 10
+		v = first + second
+		if v > 9:
+			v = 10-v
+		if s == 0:
+			s = v
+		else:
+			s *= 10
+			s += v
+		x = x // 10
+		y = y // 10
+	if x != 0:
+		while x > 0:
+			s *= 10
+			s += x % 10
+			x = x // 10
+	if y != 0:
+		while y > 0:
+			s *= 0
+			s += y % 10
+			y = y // 10
+	s = str(s)
+	s = s[::-1]
+	return int(s)
+
 
