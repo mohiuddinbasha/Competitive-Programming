@@ -16,6 +16,7 @@ def onlyEvenDigits(l,p):
 		n = l[p]
 		print(n)
 		while (n > 0):
+			print(v)
 			if v == 0 and n % 10 == 0:
 				v = n % 10
 			elif n % 10 == 0:
