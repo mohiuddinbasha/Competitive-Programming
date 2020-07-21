@@ -62,7 +62,15 @@ public class Graph_Representation{
 		// """Don't return a list of edge objects!
         // Return a list of list that looks like this:
         // [Edge Value, From Node Value, To Node Value]"""
-        ArrayList<ArrayList<Integer>> r = new ArrayList<ArrayList<Integer>>();
+		ArrayList<ArrayList<Integer>> r = new ArrayList<ArrayList<Integer>>();
+		for (int i = 0; i < edges.size(); i++) {
+			Edge edge = edges.get(i);
+			ArrayList<Integer> temp = new ArrayList<>();
+			temp.add(edge.value);
+			temp.add(edge.node_from.value);
+			temp.add(edge.node_to.value);
+			r.add(temp);
+		}
         return r;
 	}
 
@@ -73,6 +81,17 @@ public class Graph_Representation{
         // "from" nodes.
         // Each section in the list will store a list of To Node
 		ArrayList<ArrayList<Integer>> r = new ArrayList<ArrayList<Integer>>();
+		for (int i = 0; i < nodes.size(); i++) {
+			Node from = nodes.get(i);
+			ArrayList<Integer> temp = new ArrayList<>();
+			for (int j = 0; j < edges.size(); j++) {
+				Edge edge = edges.get(j);
+				if (edge.node_from == from) {
+					temp.add(edge.node_to.value);
+				}
+			}
+			r.add(temp);
+		}
 		return r;
 
 	}
@@ -85,6 +104,12 @@ public class Graph_Representation{
         // and a 0 if no edge exists."""
 		
 		ArrayList<ArrayList<Integer>> r = new ArrayList<ArrayList<Integer>>();
+		for (int i = 0; i < edges.size(); i++) {
+			Edge edge = edges.get(i);
+			ArrayList<Integer> temp = new ArrayList<>();
+			temp.set(edge.node_to.value, edge.value);
+			r.set(edge.node_from.value, temp);
+		}
 		return r;
 
 
