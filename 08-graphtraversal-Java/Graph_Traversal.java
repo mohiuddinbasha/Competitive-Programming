@@ -132,6 +132,15 @@ public class Graph_Traversal{
 				array.get(i).node_to.visited = true;
 			}
 		}
+		boolean bool = true;
+		for(int i = 0; i < this.nodes.size(); i++){
+			if (this.nodes.get(i).visited == false) {
+				break;
+			}
+		}
+		if (bool) {
+			return arr;
+		}
 		for (int i = 0; i < array.size(); i++) {
 			bfs_helper(array.get(i).node_to, arr);
 		}
