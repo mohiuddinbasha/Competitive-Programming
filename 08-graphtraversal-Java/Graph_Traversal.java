@@ -124,16 +124,16 @@ public class Graph_Traversal{
 		if (!start_node.visited) {
 			arr.add(start_node.value);
 			start_node.visited = true;
-			ArrayList<Edge> array = start_node.edges;
-			for (int i = 0; i < array.size(); i++) {
-				if (!array.get(i).node_to.visited) {
-					arr.add(array.get(i).node_to.value);
-					array.get(i).node_to.visited = true;
-				}
+		}
+		ArrayList<Edge> array = start_node.edges;
+		for (int i = 0; i < array.size(); i++) {
+			if (!array.get(i).node_to.visited) {
+				arr.add(array.get(i).node_to.value);
+				array.get(i).node_to.visited = true;
 			}
-			for (int i = 0; i < array.size(); i++) {
-				bfs_helper(array.get(i).node_to, arr);
-			}
+		}
+		for (int i = 0; i < array.size(); i++) {
+			bfs_helper(array.get(i).node_to, arr);
 		}
 		return arr;
 	}
@@ -182,7 +182,7 @@ public class Graph_Traversal{
 		graph.insert_edge(9471, 2, 5);   // London <-> Sao Paolo
 		graph.insert_edge(9471, 5, 2);   // Sao Paolo <-> London
 		
-		ArrayList<String> r = graph.dfs_names(2);
+		ArrayList<String> r = graph.bfs_names(2);
 		System.out.println(r);
 	}
 }
