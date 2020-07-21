@@ -135,6 +135,7 @@ public class Graph_Traversal{
 		boolean bool = true;
 		for(int i = 0; i < this.nodes.size(); i++){
 			if (this.nodes.get(i).visited == false) {
+				bool = false;
 				break;
 			}
 		}
