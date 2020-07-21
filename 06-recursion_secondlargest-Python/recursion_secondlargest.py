@@ -21,8 +21,8 @@ def recursion(L,first,second,p):
 	else:
 		val = L[p]
 		if first == None:
-			first = second = val
-		elif val > first:
+			first = val
+		elif val >= first:
 			second = first
 			first = val
 		elif (second == None or val > second) and val < first:
@@ -32,4 +32,3 @@ def recursion(L,first,second,p):
 def recursion_secondlargest(L):
 	# Your code goes here
 	return recursion(L,None,None,0)
-print(recursion_secondlargest([4,3]))
