@@ -78,7 +78,7 @@ public class Graph_Traversal{
 		}
 	}
 
-	public ArrayList<Integer> dfs_helper(Node start_node){
+	public ArrayList<Integer> dfs_helper(Node start_node, ArrayList<Integer> arr){
 		// """TODO: Write the helper function for a recursive implementation
         // of Depth First Search iterating through a node's edges. The
         // output should be a list of numbers corresponding to the
@@ -86,9 +86,16 @@ public class Graph_Traversal{
         // ARGUMENTS: start_node is the starting Node
         // MODIFIES: the value of the visited property of nodes in self.nodes 
         // RETURN: a list of the traversed node values (integers).
-        // """
-        return ArrayList<integer>();
-		
+		// """
+		if (!start_node.visited) {
+			arr.add(start_node.value);
+			start_node.visited = true;
+			ArrayList<Edge> array = start_node.edges;
+			for (int i = 0; i < array.size(); i++) {
+				dfs_helper(array.get(i).node_to, arr);
+			}
+		}
+		return arr;
 	}
 
 	public ArrayList<Integer> dfs(int start_node_num){
@@ -99,7 +106,8 @@ public class Graph_Traversal{
         // RETURN: a list of the node values (integers)."""
 		this.clear_visited();
 		Node start_node = this.find_node(start_node_num);
-		return this.dfs_helper(start_node);
+		ArrayList<Integer> arr = new ArrayList<>();
+		return this.dfs_helper(start_node, arr);
 	}
 
 	public ArrayList<String> dfs_names(int start_node_num){
@@ -112,6 +120,24 @@ public class Graph_Traversal{
 		return res;
 	}
 
+	public ArrayList<Integer> bfs_helper(Node start_node, ArrayList<Integer> arr) {
+		if (!start_node.visited) {
+			arr.add(start_node.value);
+			start_node.visited = true;
+			ArrayList<Edge> array = start_node.edges;
+			for (int i = 0; i < array.size(); i++) {
+				if (!array.get(i).node_to.visited) {
+					arr.add(array.get(i).node_to.value);
+					array.get(i).node_to.visited = false;
+				}
+			}
+			for (int i = 0; i < array.size(); i++) {
+				dfs_helper(array.get(i).node_to, arr);
+			}
+		}
+		return arr;
+	}
+
 	public ArrayList<Integer> bfs(int start_node_num) {
 		// """TODO: Create an iterative implementation of Breadth First Search
         // iterating through a node's edges. The output should be a list of
@@ -119,8 +145,10 @@ public class Graph_Traversal{
         // ARGUMENTS: start_node_num is the node number (integer)
         // MODIFIES: the value of the visited property of nodes in self.nodes
         // RETURN: a list of the node values (integers)."""
-        return new ArrayList();
-
+		this.clear_visited();
+		Node start_node = this.find_node(start_node_num);
+		ArrayList<Integer> arr = new ArrayList<>();
+		return this.bfs_helper(start_node, arr);
 	}
 
 	public ArrayList<String> bfs_names(int start_node_num){
@@ -131,5 +159,30 @@ public class Graph_Traversal{
 			res.add(this.node_names.get(arr.get(i)));
 		}
 		return res;
-	}	
+	}
+	public static void main(String[] args) {
+		Graph_Traversal graph = new Graph_Traversal();
+		ArrayList<String> input = new ArrayList<String>(Arrays.asList("Mountain View", "San Francisco", "London", "Shanghai", "Berlin", "Sao Paolo", "Bangalore"));
+		graph.set_node_names(input);       
+
+		graph.insert_edge(51, 0, 1);     // MV <-> SF
+		graph.insert_edge(51, 1, 0);     // SF <-> MV
+		graph.insert_edge(9950, 0, 3);   // MV <-> Shanghai
+		graph.insert_edge(9950, 3, 0);   // Shanghai <-> MV
+		graph.insert_edge(10375, 0, 5);  // MV <-> Sao Paolo
+		graph.insert_edge(10375, 5, 0);  // Sao Paolo <-> MV
+		graph.insert_edge(9900, 1, 3);   // SF <-> Shanghai
+		graph.insert_edge(9900, 3, 1);   // Shanghai <-> SF
+		graph.insert_edge(9130, 1, 4);   // SF <-> Berlin
+		graph.insert_edge(9130, 4, 1);   // Berlin <-> SF
+		graph.insert_edge(9217, 2, 3);   // London <-> Shanghai
+		graph.insert_edge(9217, 3, 2);   // Shanghai <-> London
+		graph.insert_edge(932, 2, 4);    // London <-> Berlin
+		graph.insert_edge(932, 4, 2);    // Berlin <-> London
+		graph.insert_edge(9471, 2, 5);   // London <-> Sao Paolo
+		graph.insert_edge(9471, 5, 2);   // Sao Paolo <-> London
+		
+		ArrayList<String> r = graph.bfs_names(2);
+		System.out.println(r);
+	}
 }
