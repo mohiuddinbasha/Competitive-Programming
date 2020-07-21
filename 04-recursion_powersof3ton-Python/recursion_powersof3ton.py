@@ -9,6 +9,8 @@ def recursion(n,l,p):
 		return None
 	v = 3**p
 	if v > n:
+		if l == []:
+			return None
 		return l
 	else:
 		l.append(v)
