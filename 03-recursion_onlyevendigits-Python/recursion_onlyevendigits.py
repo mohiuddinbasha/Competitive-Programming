@@ -11,8 +11,26 @@
 def onlyEvenDigits(l,p):
 	if p >= len(l):
 		return l
-	elif l[p] % 2 != 0:
-		l[p] = 0
+	else:
+		v = 0
+		n = l[p]
+		while (n > 0):
+			if v == 1 and n % 10 == 0:
+				v = n % 10
+			elif n % 10 == 0:
+				v *= 10
+				v += n % 10
+			n = n / 10
+		n = v
+		v = 0
+		while n > 0:
+			if v == 1:
+				v = n % 10
+			else:
+				v *= 10
+				v += n % 10
+			n = n / 10
+		l[p] = v
 	return onlyEvenDigits(l,p+1)
 
 def fun_recursion_onlyevendigits(l):
