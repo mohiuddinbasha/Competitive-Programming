@@ -128,7 +128,7 @@ public class Graph_Traversal{
 			for (int i = 0; i < array.size(); i++) {
 				if (!array.get(i).node_to.visited) {
 					arr.add(array.get(i).node_to.value);
-					array.get(i).node_to.visited = false;
+					array.get(i).node_to.visited = true;
 				}
 			}
 			for (int i = 0; i < array.size(); i++) {
