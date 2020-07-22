@@ -23,6 +23,7 @@ def fun_nth_carolprime(n):
         val = ((2**temp-1)**2 - 2)
         print(val)
         if isPrime(val):
+            print("hello")
             count += 1
             carol = val
         temp += 1
