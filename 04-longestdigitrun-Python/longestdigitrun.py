@@ -6,6 +6,7 @@
 # as does longestDigitRun(-677886).
 def longestdigitrun(n):
 	# Your code goes here
+	n = abs(n)
 	max_num = 0
 	max_count = 0
 	num = 0
@@ -28,5 +29,11 @@ def longestdigitrun(n):
 					max_num = num
 			num = x
 			count = 1
+	if count > max_count:
+		max_count = count
+		max_num = num
+	elif count == max_count:
+		if num < max_num:
+			max_num = num
 	return int(max_num)
 				
