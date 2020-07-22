@@ -13,4 +13,28 @@
 import math
 
 def fun_nearestkaprekarnumber(n):
-    return 1
+    below_n = 0
+    after_n = 0
+    temp = n
+    while below_n == 0:
+        sqr = temp**2
+        s = str(sqr)
+        if(any(int(s[x:]) != 0 and int(s[:x])+int(s[x:]) == temp for x in range(1,len(s)))):
+            below_n = temp
+        temp -= 1
+    temp = n
+    while after_n == 0:
+        sqr = temp**2
+        s = str(sqr)
+        if(any(int(s[x:]) != 0 and int(s[:x])+int(s[x:]) == temp for x in range(1,len(s)))):
+            after_n = temp
+        temp += 1
+    diff1 = n - below_n
+    diff2 = after_n - n
+    if diff1 < diff2:
+        return below_n
+    elif diff1 > diff2:
+        return after_n
+    else:
+        return below_n
+    
