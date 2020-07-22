@@ -1,7 +1,7 @@
 # Write the function nthCarolPrime(n), which takes a non-negative int and returns the nth Carol Prime, 
 # which is a prime number of the form ((2**k - 1)**2 - 2) for some value positive int k. For example, 
 # if k equals 3, ((2**3 - 1)**2 -2) equals 47, which is prime, and so 47 is a Carol Prime. 
-# The first several Carol primes are: 7, 47, 223, 959, 3967, 16127, 65023, 261119, 1046527,... As such, 
+# The first several Carol primes are: 7, 47, 223, 959(not prime), 3967, 16127, 65023, 261119, 1046527,... As such, 
 # nthCarolPrime(0) returns 7.
 # Note: You must use a reasonably efficient approach that quickly works up to n==9, which 
 # will return a 12-digit answer! In particular, this means you cannot just edit isPrime. 
@@ -21,11 +21,8 @@ def fun_nth_carolprime(n):
     carol = 0
     while count < n:
         val = ((2**temp-1)**2 - 2)
-        print(val)
         if isPrime(val):
-            print("hello")
             count += 1
             carol = val
         temp += 1
     return carol
-print(fun_nth_carolprime(3))
