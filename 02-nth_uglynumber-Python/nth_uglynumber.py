@@ -4,7 +4,7 @@
 import math
 
 def isPrime(n):
-    if n <= 3:
+    if n > 1 and n <= 3:
         return True
     if n % 2 == 0 or n % 3 == 0:
         return False
@@ -21,17 +21,17 @@ def fun_nth_uglynumber(n):
         return 1
     temp = 2
     while count < n:
-        print(temp)
+        # print(temp)
         l = [2, 3, 5]
         boolean = True
         for i in range(1,temp):
             if isPrime(i) and n % i == 0 and i not in l:
                 boolean = False
                 break
-        print(boolean)
+        # print(boolean)
         if boolean:
             count += 1
         temp += 1
         break
     return temp - 1
-print(fun_nth_uglynumber(1))
+# print(fun_nth_uglynumber(1))
