@@ -31,7 +31,7 @@ def nthautomorphicnumbers(n):
 			if isAutomorphic(int(s2)):
 				break
 			counter += 1
-		temp2 = int(str(counter)+str(temp1))
+		temp2 = int(str(counter)+str(temp2))
 		count += 2
 	small = big = -1
 	if temp1 < temp2:
