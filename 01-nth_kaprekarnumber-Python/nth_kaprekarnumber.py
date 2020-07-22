@@ -10,4 +10,25 @@
 import math
 
 def fun_nth_kaprekarnumber(n):
-    return 1;
+    count = -1
+    temp = 1
+    while count < n:
+        sqr = temp*2
+        string = str(sqr)
+        if sqr == temp:
+            count += 1
+        elif len(string) % 2 == 0:
+            mid = len(string) // 2
+            first = int(string[:mid])
+            second = int(String[mid:])
+            if first+second == temp:
+                count += 1
+        else:
+            mid = len(string) // 2
+            mid -= 1
+            first = int(string[:mid])
+            second = int(String[mid:])
+            if first+second == temp:
+                count += 1
+    return temp - 1
+
