@@ -7,13 +7,15 @@
 import math
 
 def isPrime(n):
-	if n % 2 == 0:
+	if n <= 3:
+		return True
+	if n % 2 == 0 or n % 3 == 0:
 		return False
-	x = 3
+	x = 5
 	while x <= math.sqrt(n):
-		if n % x == 0:
+		if n % x == 0 or n % (x+2) == 0:
 			return False
-		x += 2
+		x += 6
 	return True
 
 def nthcircularprime(n):
