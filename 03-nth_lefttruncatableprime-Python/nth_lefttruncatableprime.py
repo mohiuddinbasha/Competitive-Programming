@@ -21,14 +21,12 @@ def fun_nth_lefttruncatableprime(n):
     while count < n:
         if isPrime(temp):
             boolean = True
-            t = temp
-            while t > 0:
-                if not isPrime(t % 10):
+            t = str(temp)
+            while t != "":
+                if not isPrime(int(t)):
                     boolean = False
-                t = t // 10
+                t = t[1:]
             if boolean:
                 count += 1
         temp += 1
     return temp - 1
-
-print(fun_nth_lefttruncatableprime(1))
