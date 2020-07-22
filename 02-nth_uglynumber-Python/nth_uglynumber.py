@@ -24,7 +24,7 @@ def fun_nth_uglynumber(n):
         # print(temp)
         l = [2, 3, 5]
         boolean = True
-        for i in range(2,temp+1):
+        for i in range(2,temp):
             if isPrime(i) and n % i == 0 and i not in l:
                 boolean = False
                 break
@@ -33,4 +33,6 @@ def fun_nth_uglynumber(n):
             count += 1
         temp += 1
     return temp - 1
-# print(fun_nth_uglynumber(1))
+print(fun_nth_uglynumber(8))
+# for i in range(10):
+#     print(fun_nth_uglynumber(i))
