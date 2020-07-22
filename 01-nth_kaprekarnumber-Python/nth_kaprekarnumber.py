@@ -13,7 +13,7 @@ def fun_nth_kaprekarnumber(n):
     count = -1
     temp = 1
     while count < n:
-        sqr = temp*2
+        sqr = temp**2
         string = str(sqr)
         if sqr == temp:
             count += 1
@@ -30,5 +30,6 @@ def fun_nth_kaprekarnumber(n):
             second = int(String[mid:])
             if first+second == temp:
                 count += 1
+        temp += 1
     return temp - 1
-
+print(fun_nth_kaprekarnumber(0))
