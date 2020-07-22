@@ -6,7 +6,7 @@
 def nthautomorphicnumbers(n):
 	# Your code goes here
 	count = 0
-	temp = 1
+	temp = 0
 	while count < n:
 		sqr = temp**2
 		s_temp = str(temp)
@@ -17,4 +17,4 @@ def nthautomorphicnumbers(n):
 		temp += 1
 		# print(count)
 	return temp - 1
-# print(nthautomorphicnumbers(2))
+# print(nthautomorphicnumbers(1))
