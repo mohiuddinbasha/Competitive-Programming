@@ -40,7 +40,7 @@ def nthautomorphicnumbers(n):
 	else:
 		small = temp2
 		big = temp1
-	if n % 2 == 0:
+	if n % 2 != 0:
 		return small
 	else:
 		return big
