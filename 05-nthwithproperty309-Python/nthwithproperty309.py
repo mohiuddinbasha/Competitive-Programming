@@ -6,4 +6,12 @@
 
 def nthwithproperty309(n):
 	# Your code goes here
-	pass
+	count = -1
+	temp = 1
+	while count <= n:
+		s = temp**5
+		s = str(s)
+		if (all(str(x) in s for x in range(10))):
+			count += 1
+		temp += 1
+	return temp - 1
