@@ -15,8 +15,9 @@ def fun_nth_kaprekarnumber(n):
     while count < n:
         sqr = temp**2
         string = str(sqr)
-        if (any(int(string[:x])+int(string[x:]) == temp for x in range(1,len(string)))):
+        if temp == sqr:
+            count += 1
+        elif (any(int(string[x:]) != 0 and int(string[:x])+int(string[x:]) == temp for x in range(1,len(string)))):
             count += 1
         temp += 1
     return temp - 1
-print(fun_nth_kaprekarnumber(0))
