@@ -28,6 +28,7 @@ def fun_nth_uglynumber(n):
             if isPrime(i) and n % i == 0 and i not in l:
                 boolean = False
                 break
+        print(boolean)
         if boolean:
             count += 1
         temp += 1
