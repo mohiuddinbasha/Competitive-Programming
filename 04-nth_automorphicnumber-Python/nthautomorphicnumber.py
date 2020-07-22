@@ -44,4 +44,4 @@ def nthautomorphicnumbers(n):
 		return small
 	else:
 		return big
-print(nthautomorphicnumbers(4))
+print(nthautomorphicnumbers(5))
