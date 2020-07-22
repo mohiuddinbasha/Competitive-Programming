@@ -28,5 +28,5 @@ def longestdigitrun(n):
 					max_num = num
 			num = x
 			count = 1
-	return max_num
+	return int(max_num)
 				
