@@ -6,6 +6,7 @@
 # counted twice, thus making 4 a Smith Number.
 # so fun_nthsmithnumber(0) should return 4
 # so fun_nthsmithnumber(1) should return 22
+import math
 
 def isPrime(n):
     count = 0
@@ -14,20 +15,30 @@ def isPrime(n):
             count += 1
     return count == 2
 
+def primefactors(temp):
+    l = []
+    while temp % 2 == 0:
+        l.append(str(2))
+        temp /= 2
+    i = 3
+    while i <= math.sqrt(temp):
+        while temp % i == 0:
+            l.append(str(i))
+            temp /= i
+        i += 2
+    if temp > 2:
+        l.append(str(int(temp)))
+    return l
+
 def fun_nth_smithnumber(n):
     count = -1
     temp = 2
     while count < n:
         if not isPrime(temp):
             # print(temp)
-            s = []
-            for i in range(2,temp):
-                if isPrime(i) and temp % i == 0:
-                    q = temp // i
-                    s.append(str(q))
+            s = primefactors(temp)
             s = "".join(s)
             t = list(s)
-            print(t)
             s = 0
             for x in t:
                 s += int(x)
@@ -40,4 +51,3 @@ def fun_nth_smithnumber(n):
                 count += 1
         temp += 1
     return temp - 1
-print(fun_nth_smithnumber(0))
