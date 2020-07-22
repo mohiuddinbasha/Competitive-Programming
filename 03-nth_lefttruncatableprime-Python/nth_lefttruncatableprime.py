@@ -23,6 +23,9 @@ def fun_nth_lefttruncatableprime(n):
             boolean = True
             t = str(temp)
             while t != "":
+                if "0" in t:
+                    boolean = False
+                    break
                 if not isPrime(int(t)):
                     boolean = False
                 t = t[1:]
