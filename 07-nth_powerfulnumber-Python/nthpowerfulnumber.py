@@ -22,11 +22,8 @@ def nthpowerfulnumber(n):
 		for x in range(1, temp):
 			if temp % x == 0 and isPrime(x):
 				l.append(x)
-		# print(l)
 		if(l != [] and all(temp % x**2 == 0 for x in l)):
-			# print(temp)
 			count += 1
 		temp += 1
 	return temp - 1
-print(nthpowerfulnumber(4))
 
