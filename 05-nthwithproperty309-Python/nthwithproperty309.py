@@ -15,4 +15,3 @@ def nthwithproperty309(n):
 			count += 1
 		temp += 1
 	return temp - 1
-print(nthwithproperty309(0))
