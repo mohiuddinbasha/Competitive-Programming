@@ -17,19 +17,20 @@ def isPrime(n):
 
 def fun_nth_uglynumber(n):
     count = 0
-    if n == 1:
-        return True
+    if n == 0:
+        return 1
     temp = 2
     while count < n:
+        print(temp)
         l = [2, 3, 5]
         boolean = True
         for i in range(1,temp):
-            if isPrime(i) and n % i == 0:
-                if i not in l:
-                    boolean = False
-                    break
+            if isPrime(i) and n % i == 0 and i not in l:
+                boolean = False
+                break
         if boolean:
             count += 1
         temp += 1
+        break
     return temp - 1
 print(fun_nth_uglynumber(1))
