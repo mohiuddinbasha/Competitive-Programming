@@ -35,4 +35,3 @@ def nthcircularprime(n):
 				count += 1
 		temp += 1
 	return temp - 1
-print(isPrime(2))
