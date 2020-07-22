@@ -5,4 +5,17 @@
 
 def nthautomorphicnumbers(n):
 	# Your code goes here
-	pass
+	count = -1
+	temp = 1
+	while count < n:
+		sqr = temp**2
+		s_temp = str(temp)
+		s_sqr = str(sqr)
+		t = int(s_sqr[(-1*len(s_temp)):])
+		if temp == 0:
+			count += 1
+		temp += 1
+		# print(count)
+		break
+	return temp - 1
+print(nthautomorphicnumbers(2))
