@@ -12,10 +12,10 @@ def nthautomorphicnumbers(n):
 		s_temp = str(temp)
 		s_sqr = str(sqr)
 		t = int(s_sqr[(-1*len(s_temp)):])
-		if temp == 0:
+		if temp == t:
 			count += 1
 		temp += 1
 		# print(count)
 		break
 	return temp - 1
-print(nthautomorphicnumbers(2))
+# print(nthautomorphicnumbers(2))
