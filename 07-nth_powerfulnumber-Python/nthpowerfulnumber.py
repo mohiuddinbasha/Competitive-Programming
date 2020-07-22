@@ -28,5 +28,5 @@ def nthpowerfulnumber(n):
 			count += 1
 		temp += 1
 	return temp - 1
-print(nthpowerfulnumber(10))
+print(nthpowerfulnumber(4))
 
