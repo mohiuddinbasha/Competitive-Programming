@@ -21,6 +21,7 @@ def fun_nth_carolprime(n):
     carol = 0
     while count < n:
         val = ((2**temp-1)**2 - 2)
+        print(val)
         if isPrime(val):
             count += 1
             carol = val
