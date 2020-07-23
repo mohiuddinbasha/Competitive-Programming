@@ -12,42 +12,30 @@ def isAutomorphic(temp):
 
 def nthautomorphicnumbers(n):
 	# Your code goes here
-	if n == 1 or n == 2:
-		return n-1
-	if n == 3:
-		return 5
-	if n == 4:
-		return 6
+	l = []
+	for i in range(10):
+		if isAutomorphic(i):
+			l.append(i)
 	count = 4
 	temp1 = 5
 	temp2 = 6
-	value = -1
-	while count < n:
-		while temp1 < temp2:
-			counter = 1
-			while True:
-				s1 = str(counter)+str(temp1)
-				if isAutomorphic(int(s1)):
-					break
-				counter += 1
-			temp1 = int(str(counter)+str(temp1))
-			count += 1
-			if count == n:
-				value = temp1
+	while count < n+2:
+		counter = 1
+		while True:
+			s1 = str(counter)+str(temp1)
+			if isAutomorphic(int(s1)):
 				break
-		if count == n:
-			break
-		while temp2 < temp1:
-			counter = 1
-			while True:
-				s2 = str(counter)+str(temp2)
-				if isAutomorphic(int(s2)):
-					break
-				counter += 1
-			temp2 = int(str(counter)+str(temp2))
-			count += 1
-			if count == n:
-				value = temp2
+			counter += 1
+		temp1 = int(str(counter)+str(temp1))
+		l.append(temp1)
+		counter = 1
+		while True:
+			s2 = str(counter)+str(temp2)
+			if isAutomorphic(int(s2)):
 				break
-	return value
-print(nthautomorphicnumbers(5))
+			counter += 1
+		temp2 = int(str(counter)+str(temp2))
+		l.append(temp2)
+		count += 2
+	l.sort()
+	return l[n-1]
