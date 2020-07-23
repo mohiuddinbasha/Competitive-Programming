@@ -7,4 +7,21 @@
 
 def nthlychrelnumbers(n):
 	# your code goes here
-	pass
+	count = 0
+	temp = 196
+	while count < n:
+		boolean = True
+		for i in range(100):
+			t = int(str(temp)[::-1])
+			temp = temp + t
+			if str(temp) == str(temp)[::-1]:
+				print(temp)
+				boolean = False
+				break
+		print(boolean)
+		if boolean:
+			count += 1
+		temp += 1
+		break
+	return temp - 1
+print(nthlychrelnumbers(1))
