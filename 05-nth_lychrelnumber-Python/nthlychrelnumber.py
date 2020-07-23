@@ -8,20 +8,17 @@
 def nthlychrelnumbers(n):
 	# your code goes here
 	count = 0
-	temp = 196
+	temp = 1
 	while count < n:
 		boolean = True
+		s = temp
 		for i in range(100):
-			t = int(str(temp)[::-1])
-			temp = temp + t
-			if str(temp) == str(temp)[::-1]:
-				print(temp)
+			t = int(str(s)[::-1])
+			s = s + t
+			if str(s) == str(s)[::-1]:
 				boolean = False
 				break
-		print(boolean)
 		if boolean:
 			count += 1
 		temp += 1
-		break
 	return temp - 1
-print(nthlychrelnumbers(1))
