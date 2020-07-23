@@ -50,4 +50,4 @@ def nthautomorphicnumbers(n):
 				value = temp2
 				break
 	return value
-print(nthautomorphicnumbers(8))
+print(nthautomorphicnumbers(5))
