@@ -13,16 +13,16 @@ def longestcommonsubstring(s1, s2):
     i = 0
     while i < len(s1):
         if s1[i] in s2:
-            val = s1[i]
+            val = ""
             j = i
-            while val not in s2:
-                j += 1
+            while val in s2:
                 if j >= len(s1):
                     if len(val) > len(output) or (len(val) == len(output) and val < output):
                         output = val
-                    i = j
                     break
                 val += s1[j]
+                j += 1
+            val = val[:-1]
             if len(val) > len(output) or (len(val) == len(output) and val < output):
                     output = val
         i += 1
