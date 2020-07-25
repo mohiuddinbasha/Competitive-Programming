@@ -9,4 +9,17 @@
 
 def leastfrequentletters(s):
 	# Your code goes here
-	pass
+	s = lower(s)
+	d = {}
+	minimum = 9999999999
+	for x in s:
+		if isalpha(x) and x not in d:
+			if s.count(x) < minimum:
+				minimum = s.count(x)
+			d[x] = s.count(x)
+	l = []
+	for x in d.keys():
+		if d[x] == minimum:
+			l.append(x)
+	l.sort()
+	return "".join(l)
