@@ -13,7 +13,7 @@ def leastfrequentletters(s):
 	d = {}
 	minimum = 9999999999
 	for x in s:
-		if isalpha(x) and x not in d:
+		if x.isalpha() and x not in d:
 			if s.count(x) < minimum:
 				minimum = s.count(x)
 			d[x] = s.count(x)
