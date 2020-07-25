@@ -20,5 +20,5 @@ def getallpermutations(x):
 	# Your code goes here
 	l.clear()
 	recursion(x,0)
-	out = [tuple(x) for x in l]
+	out = [tuple(x) for x in l] 
 	return out
