@@ -4,7 +4,7 @@ from samechars import samechars
 import pytest
 
 
-@pytest.mark.parametrize('x, y, result',[
+@pytest.mark.parametrize('x, result',[
 	(("abcabcabc", "cba") , True),
 	(("abcabcabc", "cbad") , False),
 	(("abcabcabc", "cBa") , False),
@@ -12,5 +12,5 @@ import pytest
 	(("","") , True),
 ])
 
-def test_samechars(x, y, result):
-    assert samechars(x, y) == result
+def test_samechars(x, result):
+    assert samechars(x) == result
