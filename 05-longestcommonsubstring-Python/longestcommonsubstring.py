@@ -12,16 +12,17 @@ def longestcommonsubstring(s1, s2):
     output = ""
     i = 0
     while i < len(s1):
-        if s[i] in s2:
-            val = s[i]
+        if s1[i] in s2:
+            val = s1[i]
             while val not in s2:
                 i += 1
                 if i >= len(s1):
                     if len(val) > len(output) or (len(val) == len(output) and val < output):
                         output = val
                     break
-                val += s[i]
+                val += s1[i]
             if len(val) > len(output) or (len(val) == len(output) and val < output):
                     output = val
         i += 1
     return output
+print(longestcommonsubstring("abcdef","abqrcdest"))
