@@ -3,30 +3,22 @@
 # your program should print all 6 permutations e.g. [('a', 'b', 'c'), ('a', 'c', 'b'), ('b', 'a', 'c'), ('b', 'c', 'a'), ('c', 'a', 'b'), ('c', 'b', 'a')]
 
 l = []
-def recursion(string, p, last):
+def recursion(string, p):
 	if len(string)-1 == p:
 		l.append(string)
 		return
 	val = string[p]
 	for i in range(p,len(string)):
-		if string[0] == last:
-			print(string)
-			string = list(string)
-			t = string[-1]
-			string[-1] = string[-2]
-			string[-2] = t
-			string = "".join(string)
-			print(string)
 		s = list(string)
 		temp = s[i]
 		s[i] = s[p]
 		s[p] = temp
 		s = "".join(s)
-		print("s: ",s)
-		recursion(s,p+1,last)
+		recursion(s,p+1)
 
 def getallpermutations(x):
 	# Your code goes here
-	recursion(x,0,x[-1])
-	return [tuple(x) for x in l]
+	recursion(x,0)
+	out = [tuple(x) for x in l].sort(key = lambda s: s[1])
+	return out
 print(getallpermutations("abc"))
