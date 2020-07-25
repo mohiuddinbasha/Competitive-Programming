@@ -21,4 +21,4 @@ def getallpermutations(x):
 	l.clear()
 	recursion(x,0)
 	out = [tuple(x) for x in l] 
-	return out
+	return sorted(out)
