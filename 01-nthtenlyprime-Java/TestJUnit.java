@@ -18,21 +18,21 @@ public class TestJUnit {
 
    @Test
    public void testCase1() {
-      nthtenlyprime s = new nthtenlyprime();
+      Nthtenlyprime s = new Nthtenlyprime();
       
-      assertEquals("1.", 19, s.fun_nthtenlyprime(0));
-      assertEquals("2.", 37, s.fun_nthtenlyprime(1));
-      assertEquals("3.", 127, s.fun_nthtenlyprime(4));
-      assertEquals("3.", 523, s.fun_nthtenlyprime(10));
+      assertEquals("1.", 2, s.fun_nthtenlyprime(0));
+      assertEquals("2.", 3, s.fun_nthtenlyprime(1));
+      assertEquals("3.", 11, s.fun_nthtenlyprime(4));
+      assertEquals("3.", 61, s.fun_nthtenlyprime(10));
    }
 
    @Test
    public void testCase2() {
-      nthtenlyprime s = new nthtenlyprime();
+      Nthtenlyprime s = new Nthtenlyprime();
       
-      assertEquals("1.", 1009, s.fun_nthtenlyprime(15));
-      assertEquals("2.", 1423, s.fun_nthtenlyprime(20)); 
-      assertEquals("2.", 2053, s.fun_nthtenlyprime(25)); 
+      assertEquals("1.", 113, s.fun_nthtenlyprime(15));
+      assertEquals("2.", 157, s.fun_nthtenlyprime(20)); 
+      assertEquals("2.", 197, s.fun_nthtenlyprime(25)); 
    }
 }
 
