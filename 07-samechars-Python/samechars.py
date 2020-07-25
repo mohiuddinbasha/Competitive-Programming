@@ -7,4 +7,7 @@
 
 def samechars(s1, s2):
 	# Your code goes here
-	pass
+	if type(s1) is str and type(s2) is str:
+		return all(s1[x] in s2 for x in range(len(s1))) and all(s2[x] in s1 for x in range(len(s2)))
+	else:
+		return False
