@@ -27,4 +27,3 @@ def longestcommonsubstring(s1, s2):
                     output = val
         i += 1
     return output
-print(longestcommonsubstring("abcdef","abqrcdest"))
