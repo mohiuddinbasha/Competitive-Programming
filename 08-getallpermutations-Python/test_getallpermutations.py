@@ -11,4 +11,7 @@ from itertools import permutations
 ])
 
 def test_getallpermutations(x):
-    assert getallpermutations(x) == list(permutations(x, r=len(x)))
+	l = list(permutations(x, r=len(x)))
+	l.sort(key = lambda x: x[0])
+	print(l)
+	assert getallpermutations(x) == l
