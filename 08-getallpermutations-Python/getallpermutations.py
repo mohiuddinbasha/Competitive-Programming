@@ -21,6 +21,4 @@ def getallpermutations(x):
 	l.clear()
 	recursion(x,0)
 	out = [tuple(x) for x in l]
-	out.sort(key = lambda x: x[len(x)-1])
 	return out
-print(getallpermutations("abc"))
