@@ -4,11 +4,37 @@
 // # is also prime, so 113 is an Additive Prime. fun_nth_additive_prime(0) returns 2
 
 
-class nthtenlyprime {
+class Nthtenlyprime {
+
+	public boolean isPrime(int n) {
+		int count = 0;
+		for (int i = 1; i <=n; i++) {
+			if (n % i == 0) {
+				count++;
+			}
+		}
+		return count == 2;
+	}
+
 	public int fun_nthtenlyprime(int n){
-		return 1;
+		int count = -1;
+		int temp = 0;
+		while (count < n) {
+			if (isPrime(temp)) {
+				int sum = 0;
+				int t = temp;
+				while (t > 0) {
+					sum += t % 10;
+					t = t / 10;
+				}
+				if (isPrime(sum)) {
+					count++;
+				}
+			}
+			temp++;
+		}
+		return temp - 1;
 	}
 	public static void main(String[] args) {
-		
 	}
 }
