@@ -18,6 +18,9 @@ def recursion(string, p):
 
 def getallpermutations(x):
 	# Your code goes here
+	l.clear()
 	recursion(x,0)
-	return sorted([tuple(x) for x in l], key = lambda x: x[1])
+	out = [tuple(x) for x in l]
+	out.sort(key = lambda x: x[len(x)-1])
+	return out
 print(getallpermutations("abc"))
