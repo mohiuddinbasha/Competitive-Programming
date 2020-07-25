@@ -9,7 +9,7 @@
 
 def leastfrequentletters(s):
 	# Your code goes here
-	s = lower(s)
+	s = s.lower()
 	d = {}
 	minimum = 9999999999
 	for x in s:
